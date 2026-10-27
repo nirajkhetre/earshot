@@ -30,7 +30,7 @@ Optional, but worth it:
 | You need | Notes |
 |---|---|
 | Windows 10 (1703+) or 11, x64 | Developed and tested on Windows 11 |
-| Python 3.11 – 3.13 | From python.org |
+| Python 3.11 – 3.13 | From python.org (3.12 and 3.13 tested) |
 | About 1.5 GB of disk | Voice models plus packages; Gemma adds 4.6 GB |
 | A microphone | Any built-in or USB mic. Auto-gain handles quiet ones |
 | Speakers or headphones | Optional: answers also show on the island |
@@ -43,7 +43,7 @@ Optional, but worth it:
   - A fast spotter fires mid-sentence, and Parakeet confirms the name was really said.
   - Every short phrase also goes to Parakeet: if it starts with the name, it wakes, and the rest of the phrase is the command.
 - **Auto-gain** lifts a quiet mic up to 12×.
-- Measured with five synthetic voices (two of them Indian-English) in [`tests/voice_matrix.py`](tests/voice_matrix.py): **58 of 60 spoken commands reached the right action**, and **0 of 33 other sentences woke it** ("hey Siri", "hey Noah", "I bought novels"…).
+- Measured with five synthetic voices (two of them Indian-English) in [`tests/voice_matrix.py`](tests/voice_matrix.py): **58–60 of 60 spoken commands reached the right action** (the synthetic voices vary a little from run to run), and **0 of 33 other sentences woke it** ("hey Siri", "hey Noah", "I bought novels"…).
 - **Follow-ups.** For about 5 s after an answer, you can reply without the name. Its own echo is ignored.
 - **Calls.** It goes deaf on its own while another app records from a mic (Discord, Meet, Teams), and names that app on the island. Apps that always hold the mic, like Voicemod, don't count.
 - **Hotkeys.** **Ctrl+Alt+Space**: talk without the name. **Ctrl+Alt+K**: type instead. **Ctrl+Alt+L**: talk mode.
@@ -240,7 +240,7 @@ mic ─▶ auto-gain ─▶ wake: spotter (sherpa-onnx KWS) ──┐
 - **Talk mode on speakers** uses a loudness gate, not echo cancellation, and hasn't had long real-world conversations yet.
 - **"Remember this as…"** reopens browser windows, but not their tabs.
 - **Not built yet:** an "only my voice" speaker lock, an installer, code signing.
-- **Tested on** Windows 11 x64 with Python 3.12, including a fresh environment installed from `requirements.txt` alone. Windows 10 and ARM64 are untested.
+- **Tested on** Windows 11 x64, with Python 3.12 and with Python 3.13 in a fresh clone set up by `setup.bat`. The full test suite passed on both. Windows 10 and ARM64 are untested.
 
 ## Credits and licences
 

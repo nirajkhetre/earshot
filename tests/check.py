@@ -157,10 +157,15 @@ def ears_check():
         parts = [say(t) for t in text.split("|")]
         x = np.concatenate([np.zeros(8000, np.float32), *sum(([p, np.zeros(16000, np.float32)] for p in parts), []),
                             np.zeros(24000, np.float32)])
-        e.mode = "sleep"
-        for i in range(0, len(x), E.BLOCK):
-            e.ring.append(x[i:i + E.BLOCK])
-            e.hear(x[i:i + E.BLOCK])
+        e.sleep()
+        e.ring.clear()
+        e.kws.reset_stream(e.stream)
+        for i in range(0, len(x), E.BLOCK):  # the app's order: auto-gain, ring, hear; then the phrase check
+            b = e.level_up(x[i:i + E.BLOCK])
+            e.ring.append(b)
+            e.hear(b)
+            while not e.phrases.empty():
+                e.check_phrase(*e.phrases.get())
         heard = next((E.after_name(g, "Nova") for g in got
                       if g not in ("wake", "quiet", "retry") and B.clean(E.after_name(g, "Nova"), "Nova")), "")
         ok = "wake" in got and B.reflex(B.clean(heard, "Nova")) is not None
