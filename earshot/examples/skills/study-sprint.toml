@@ -1,0 +1,19 @@
+# A skill: a routine of steps, triggered by any phrase below ("hey nova, pomodoro").
+# A step is a tool with its arguments (any tool the assistant has), a shell command (run = "..."),
+# or a pause (wait = seconds). say_result = true adds that step's answer to the reply.
+name = "study sprint"
+phrases = ["pomodoro", "focus sprint", "lock in"]
+reply = "Locked in. 25 minutes, go."
+
+[[steps]]
+tool = "close_app"
+name = "Discord"
+
+[[steps]]
+tool = "set_volume"
+level = 25
+
+[[steps]]
+tool = "timer"
+minutes = 25
+label = "focus sprint"

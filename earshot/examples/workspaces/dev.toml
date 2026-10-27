@@ -1,0 +1,23 @@
+# A workspace. Say "open dev space" (or "open coding space": any phrase below works).
+# "close dev space" closes exactly the windows it opened, and its virtual desktop.
+name = "dev"
+phrases = ["coding", "code", "work"]
+desktop = "new"            # "new" = its own virtual desktop, "current" = right here
+say = "Dev space is up. Ship something."
+close = ["Discord"]        # distractions to close first (app names)
+
+[[apps]]
+run = "code"                          # a command on PATH, or the full path to an .exe
+args = ["~/Documents"]
+place = "left-two-thirds"             # left, right, top, bottom, top-left, top-right, bottom-left, bottom-right,
+                                      # center, full, left-third, middle-third, right-third, left-two-thirds,
+                                      # right-two-thirds, or [x, y, width, height] as fractions of the screen
+
+[[apps]]
+run = "wt"                            # Windows Terminal
+args = ["-d", "~/Documents"]
+place = [0.667, 0.0, 0.333, 0.5]
+
+[[apps]]
+url = ["https://github.com", "https://dev.to"]   # one browser window, one tab each
+place = [0.667, 0.5, 0.333, 0.5]

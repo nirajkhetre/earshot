@@ -1,0 +1,12 @@
+# earshot: Windows 10/11 (x64), Python 3.11+. setup.bat installs these and the voice models.
+PySide6-Essentials>=6.7
+sherpa-onnx>=1.12,<2      # 2.x dropped espeak for Kokoro: unknown words go silent
+sentencepiece             # turns the assistant's name into wake-word tokens
+sounddevice
+numpy
+pycaw                     # exact volume (so "undo" can put it back), and which apps are recording
+pyvda                     # workspaces on their own virtual desktop
+pywin32
+Pillow                    # screenshots
+google-genai>=2.0         # the cloud brain and talk mode (optional at runtime: works without a key)
+mcp>=2.0                  # plug in any MCP server (optional at runtime)

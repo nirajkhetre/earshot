@@ -1,0 +1,17 @@
+name = "study"
+phrases = ["college", "studies", "focus"]
+desktop = "new"
+say = "Study mode. Phone face down."
+close = ["Discord", "Steam"]
+
+[[apps]]
+url = ["https://www.notion.so", "https://scholar.google.com"]
+place = "left"
+
+[[apps]]
+folder = "~/Documents"                # opens in File Explorer
+place = "top-right"
+
+[[apps]]
+app = "Notepad"                       # anything from the Start menu, by name
+place = "bottom-right"

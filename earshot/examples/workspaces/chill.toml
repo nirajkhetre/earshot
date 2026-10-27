@@ -1,0 +1,12 @@
+name = "chill"
+phrases = ["music", "vibe", "break"]
+desktop = "current"
+say = "Chill mode. You earned it."
+
+[[apps]]
+app = "Spotify"
+place = "left"
+
+[[apps]]
+url = "https://www.youtube.com"
+place = "right"

@@ -1,0 +1,17 @@
+name = "good night"
+phrases = ["goodnight", "i'm done for today", "wrap it up"]
+reply = "Saved where you were. Say 'where was I' tomorrow. Good night."
+
+[[steps]]
+tool = "save_workspace"
+name = "last"
+
+[[steps]]
+tool = "set_volume"
+level = 15
+
+[[steps]]
+wait = 3
+
+[[steps]]
+tool = "lock_pc"

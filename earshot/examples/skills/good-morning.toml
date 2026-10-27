@@ -1,0 +1,14 @@
+name = "good morning"
+phrases = ["morning", "i'm up", "rise and shine"]
+reply = "Good morning."
+
+[[steps]]
+tool = "clock"
+say_result = true
+
+[[steps]]
+tool = "battery"
+say_result = true
+
+[[steps]]
+run = "start https://calendar.google.com"   # any command: this one opens your calendar
